@@ -89,7 +89,7 @@ public final class ReciprocalArraySum {
      * created to perform reciprocal array sum in parallel.
      */
     private static class ReciprocalArraySumTask extends RecursiveAction {
-        private static final int THRESHOLD = 1024;
+        private static final int THRESHOLD = 8192; 
     	/**
          * Starting index for traversal done by this task.
          */
@@ -162,13 +162,7 @@ public final class ReciprocalArraySum {
      */
     protected static double parArraySum(final double[] input) {
         assert input.length % 2 == 0;
-        
-        ForkJoinPool pool = new ForkJoinPool();
-        ReciprocalArraySumTask task = new ReciprocalArraySumTask(0, input.length, input);
-        pool.invoke(task);
-        
-
-        return task.getValue();
+        return parManyTaskArraySum(input, 2);
     }
 
     /**
@@ -192,9 +186,8 @@ public final class ReciprocalArraySum {
         	int hi = getChunkEndExclusive(i, numTasks, input.length);
         	tasks.add(new ReciprocalArraySumTask(lo, hi, input));
         }
-        
         ForkJoinTask.invokeAll(tasks);
-
+    	
         for(ReciprocalArraySumTask task : tasks) {
         	sum += task.getValue();
         }
