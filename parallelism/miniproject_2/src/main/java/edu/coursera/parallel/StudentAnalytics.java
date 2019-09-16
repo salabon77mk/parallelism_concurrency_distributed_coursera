@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -46,7 +47,15 @@ public final class StudentAnalytics {
      */
     public double averageAgeOfEnrolledStudentsParallelStream(
             final Student[] studentArray) {
-        throw new UnsupportedOperationException();
+    	
+    	double avg = Stream.of(studentArray)
+    			.parallel()
+    			.filter(s -> s.checkIsCurrent())
+    			.mapToDouble(a -> a.getAge())
+    			.average()
+    			.getAsDouble();
+    	return avg;
+    	//throw new UnsupportedOperationException();
     }
 
     /**
@@ -100,7 +109,18 @@ public final class StudentAnalytics {
      */
     public String mostCommonFirstNameOfInactiveStudentsParallelStream(
             final Student[] studentArray) {
-        throw new UnsupportedOperationException();
+    	
+    	String mostComm = Stream.of(studentArray)
+    			.parallel()
+    			.filter(a -> !a.checkIsCurrent())
+    			.collect(Collectors.groupingBy(Student::getFirstName, Collectors.counting()))
+    			.entrySet().stream().parallel()
+    			.max(Map.Entry.comparingByValue())
+    			.map(Map.Entry::getKey).orElse(null);
+    	
+    	
+    	return mostComm;
+    //    throw new UnsupportedOperationException();
     }
 
     /**
@@ -136,6 +156,14 @@ public final class StudentAnalytics {
      */
     public int countNumberOfFailedStudentsOlderThan20ParallelStream(
             final Student[] studentArray) {
-        throw new UnsupportedOperationException();
+        // so strange that it we're returning an int here?
+    	long fails = Stream.of(studentArray).parallel()
+    			.filter(s -> !s.checkIsCurrent()
+    					&& s.getAge() > 20
+    					&& s.getGrade() < 65)
+    			.count();
+    	
+    	return (int)fails; // really don't want to do this but for sake of assignment, I guess
+    	//throw new UnsupportedOperationException();
     }
 }
