@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="miniproject_0/src/main/java"/>
+	<classpathentry kind="src" path="miniproject_0/src/test/java"/>
+	<classpathentry kind="src" path="miniproject_1/src/main/java"/>
+	<classpathentry kind="src" path="miniproject_1/src/test/java"/>
+	<classpathentry kind="src" path="miniproject_2/src/main/java"/>
+	<classpathentry kind="src" path="miniproject_2/src/test/java"/>
+	<classpathentry kind="src" path="miniproject_3/src/main/java"/>
+	<classpathentry kind="src" path="miniproject_3/src/test/java"/>
+	<classpathentry kind="src" path="miniproject_4/src/main/java"/>
+	<classpathentry kind="src" path="miniproject_4/src/test/java"/>
+	<classpathentry kind="lib" path="miniproject_0/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="miniproject_0/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="miniproject_0/pcdp-core-0.0.4-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="miniproject_1/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="miniproject_1/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="miniproject_1/pcdp-core-0.0.4-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="miniproject_2/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="miniproject_2/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="miniproject_2/pcdp-core-0.0.4-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="miniproject_3/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="miniproject_3/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="miniproject_3/pcdp-core-0.0.4-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="miniproject_4/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="miniproject_4/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="miniproject_4/pcdp-core-0.0.4-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="miniproject_4/target/surefire/surefirebooter191001772122456946.jar"/>
+	<classpathentry kind="lib" path="miniproject_4/target/surefire/surefirebooter3593447984225884839.jar"/>
+	<classpathentry kind="lib" path="miniproject_4/target/surefire/surefirebooter5040279589689204511.jar"/>
+	<classpathentry kind="lib" path="miniproject_4/target/surefire/surefirebooter6185357892058177301.jar"/>
+	<classpathentry kind="lib" path="miniproject_4/target/surefire/surefirebooter6867411003104574185.jar"/>
+	<classpathentry kind="lib" path="miniproject_4/target/surefire/surefirebooter8057551268765110279.jar"/>
+	<classpathentry kind="lib" path="miniproject_4/target/surefire/surefirebooter8580632710814723059.jar"/>
+	<classpathentry kind="output" path="miniproject_0/target/classes"/>
+</classpath>

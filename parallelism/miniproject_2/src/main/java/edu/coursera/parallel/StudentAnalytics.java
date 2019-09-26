@@ -156,7 +156,7 @@ public final class StudentAnalytics {
      */
     public int countNumberOfFailedStudentsOlderThan20ParallelStream(
             final Student[] studentArray) {
-        // so strange that it we're returning an int here?
+        // so strange because we're returning an int here?
     	long fails = Stream.of(studentArray).parallel()
     			.filter(s -> !s.checkIsCurrent()
     					&& s.getAge() > 20
